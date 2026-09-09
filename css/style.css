@@ -1,0 +1,434 @@
+/* ==================== ESTILOS GENERALES Y VARIABLES ==================== */
+:root {
+  --verde-oscuro: #4d5d47;
+  --verde-suave: #7d9265;
+  --fondo-claro: #f4f8f3;
+  --blanco: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--fondo-claro);
+  font-family: 'Montserrat', sans-serif;
+  color: var(--verde-oscuro);
+  overflow-x: hidden;
+}
+
+/* ==================== PORTADA EN CAPAS ==================== */
+.sobre-contenedor {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100vh;
+  background: radial-gradient(circle, #f4f8f3 0%, #dbe5d8 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+  overflow: hidden;
+}
+
+.sobre-oculto {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* --- CAPA 1: IMÁGENES DE LAS ESQUINAS --- */
+.capa-flor {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.flor-tl {
+  top: 0; left: 0;
+  width: 25vw; max-width: 280px;
+  animation: brisa 5s ease-in-out infinite alternate;
+}
+
+.flor-tr {
+  top: 0; right: 0;
+  width: 28vw; max-width: 320px;
+  animation: brisa 6s ease-in-out infinite alternate-reverse;
+}
+
+.flor-bl {
+  bottom: 0; left: 0;
+  width: 26vw; max-width: 300px;
+  animation: brisa 5.5s ease-in-out infinite alternate;
+}
+
+.flor-br {
+  bottom: 0; right: 0;
+  width: 25vw; max-width: 280px;
+  animation: brisa 6.5s ease-in-out infinite alternate-reverse;
+}
+
+/* --- CAPA 2: CONTENIDO CENTRAL COMPACTO --- */
+.contenido-portada {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 10px 20px;
+  max-width: 400px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.subtitulo-xv {
+  font-family: 'Cinzel', serif;
+  font-size: 1.05rem;
+  letter-spacing: 6px;
+  color: var(--verde-oscuro);
+  font-weight: 600;
+  margin: 0;
+}
+
+.nombre-quinceanera {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.8rem;
+  color: var(--verde-oscuro);
+  line-height: 1;
+  margin: 0;
+}
+
+.separador-corazon {
+  color: var(--verde-oscuro);
+  font-size: 0.7rem;
+  opacity: 0.5;
+  margin: 0;
+}
+
+.wrapper-sobre {
+  margin: 5px 0;
+  animation: flotarSobre 4s ease-in-out infinite alternate;
+}
+
+.img-sobre {
+  width: 70vw;
+  max-width: 330px;
+  filter: drop-shadow(0 12px 22px rgba(77, 93, 71, 0.2));
+}
+
+.frase-invitacion {
+  font-family: 'Cinzel', serif;
+  font-size: 0.82rem;
+  color: var(--verde-oscuro);
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.btn-abrir-sobre {
+  background: linear-gradient(135deg, #97aa7f 0%, #7d9265 100%);
+  color: var(--blanco);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 11px 26px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.82rem;
+  letter-spacing: 2px;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(125, 146, 101, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 4px;
+}
+
+.btn-abrir-sobre:active {
+  transform: scale(0.96);
+}
+
+/* ==================== CONTENIDO PRINCIPAL (INFERIOR) ==================== */
+.invitacion {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+}
+
+/* Reproductor flotante de música */
+.reproductor {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.btn-musica {
+  background: var(--blanco);
+  border: 1px solid var(--verde-suave);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Cabecera interior */
+.cabecera {
+  margin-bottom: 30px;
+}
+
+.etiqueta {
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  letter-spacing: 4px;
+  color: var(--verde-suave);
+  margin-bottom: 5px;
+}
+
+.titulo-principal {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  color: var(--verde-oscuro);
+  margin: 0;
+}
+
+/* ==================== TARJETA DE PRESENTACIÓN Y PADRES ==================== */
+.tarjeta-presentacion {
+  background: var(--blanco);
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(77, 93, 71, 0.08);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.texto-bendicion {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: #555;
+  font-style: italic;
+  margin-bottom: 25px;
+}
+
+.seccion-padres {
+  margin: 20px 0;
+}
+
+.leyenda-padres, .leyenda-invitacion, .leyenda-hija {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: var(--verde-suave);
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.nombres-padres {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.4rem;
+  color: var(--verde-oscuro);
+  font-weight: normal;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.ampersand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  color: var(--verde-suave);
+  display: block;
+  margin: 4px 0;
+}
+
+.monograma-xv {
+  font-family: 'Cinzel', serif;
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: var(--verde-oscuro);
+  letter-spacing: 4px;
+  margin: 15px 0;
+  border-top: 1px solid rgba(125, 146, 101, 0.2);
+  border-bottom: 1px solid rgba(125, 146, 101, 0.2);
+  padding: 10px 0;
+  display: inline-block;
+  width: 100%;
+  max-width: 200px;
+}
+
+.nombre-quinceanera-interiores {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.2rem;
+  color: var(--verde-oscuro);
+  margin: 5px 0 0 0;
+}
+
+/* ==================== CONTADOR Y OTROS ELEMENTOS ==================== */
+.contador-caja {
+  background: var(--blanco);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(77, 93, 71, 0.08);
+  margin-bottom: 30px;
+}
+
+.contador-caja h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.contador {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.contador div {
+  background: var(--fondo-claro);
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 55px;
+}
+
+.contador span {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--verde-oscuro);
+  display: block;
+}
+
+.contador p {
+  font-size: 0.75rem;
+  margin: 5px 0 0 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Tarjetas de detalles (Cuándo y Dónde) */
+.detalles {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.tarjeta {
+  background: var(--blanco);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(77, 93, 71, 0.08);
+  text-align: center;
+}
+
+.tarjeta .icono {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.tarjeta h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  margin: 5px 0 10px 0;
+}
+
+.tarjeta p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+.tarjeta .enlace {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--verde-suave);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px dashed var(--verde-suave);
+}
+
+/* Sección de Confirmación */
+.confirmacion {
+  background: var(--blanco);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(77, 93, 71, 0.08);
+}
+
+.confirmacion h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.btn-dorado {
+  background: linear-gradient(135deg, #97aa7f 0%, #7d9265 100%);
+  color: var(--blanco);
+  border: none;
+  padding: 12px 30px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(125, 146, 101, 0.35);
+  transition: transform 0.2s ease;
+}
+
+.btn-dorado:active {
+  transform: scale(0.96);
+}
+
+/* Animaciones */
+@keyframes flotarSobre {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+@keyframes brisa {
+  0% { transform: rotate(0deg) scale(1); }
+  100% { transform: rotate(2deg) scale(1.03); }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.aparecer {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- MEJORA DE BORDES Y ESQUINAS EN MÓVIL --- */
+@media (max-width: 768px) {
+  .flor-tl {
+    width: 38vw;
+    max-width: 170px;
+    top: -5px;
+    left: -5px;
+  }
+  .flor-tr {
+    width: 45vw;
+    max-width: 210px;
+    top: -5px;
+    right: -5px;
+  }
+  .flor-bl {
+    width: 45vw;
+    max-width: 210px;
+    bottom: -5px;
+    left: -5px;
+  }
+  .flor-br {
+    width: 40vw;
+    max-width: 180px;
+    bottom: -5px;
+    right: -5px;
+  }
+}
