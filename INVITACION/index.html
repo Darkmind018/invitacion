@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis 15 Años - Maria Veliz</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Fuentes elegantes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Música de fondo -->
+  <audio id="bg-music" src="assets/musica/cancion.mp3" loop></audio>
+
+  <!-- ==================== PANTALLA 1: PORTADA EN CAPAS ==================== -->
+  <div id="pantalla-sobre" class="sobre-contenedor">
+    
+    <!-- Capa 1: Flores y ramas en las 4 esquinas -->
+    <img src="assets/imagenes/flor-top-left.png" alt="Decoración" class="capa-flor flor-tl">
+    <img src="assets/imagenes/flor-top-right.png" alt="Decoración" class="capa-flor flor-tr">
+    <img src="assets/imagenes/flor-bottom-left.png" alt="Decoración" class="capa-flor flor-bl">
+    <img src="assets/imagenes/flor-bottom-right.png" alt="Decoración" class="capa-flor flor-br">
+
+    <!-- Capa 2: Contenido central armonizado -->
+    <div class="contenido-portada">
+      <p class="subtitulo-xv">MIS XV</p>
+      <h1 class="nombre-quinceanera">Maria Veliz</h1>
+      
+      <div class="separador-corazon">─── 🌿 ───</div>
+
+      <!-- El sobre interactivo -->
+      <div class="wrapper-sobre">
+        <img src="assets/imagenes/sobre.png" alt="Sobre de invitación" class="img-sobre">
+      </div>
+
+      <p class="frase-invitacion">Acompáñame a celebrar este día tan especial.</p>
+      
+      <div class="separador-corazon">─── 🌿 ───</div>
+
+      <!-- Botón para abrir la invitación -->
+      <button id="btn-abrir" class="btn-abrir-sobre">
+        ABRIR INVITACIÓN
+      </button>
+    </div>
+
+  </div>
+
+  <!-- ==================== PANTALLA 2: CONTENIDO PRINCIPAL ==================== -->
+  <main class="invitacion">
+    <div class="reproductor">
+      <button id="btn-pausa" class="btn-musica">🎵</button>
+    </div>
+
+    <header class="cabecera fade-in">
+      <p class="etiqueta">MIS XV AÑOS</p>
+      <h1 class="titulo-principal">Maria Veliz</h1>
+    </header>
+
+    <!-- ===== SECCIÓN DE BENDICIÓN, PADRES Y QUINCE AÑOS ===== -->
+    <section class="tarjeta-presentacion fade-in">
+      <p class="texto-bendicion">
+        Cumplir 15 años es el comienzo de una etapa hermosa. No hay mejor manera de celebrarlo que rodeada de las personas que más amo, dando gracias a Dios por estos años llenos de aprendizajes, risas y bendiciones, así como por la oportunidad de seguir creciendo y fortaleciendo los dones que me regaló para cada momento de mi vida.
+      </p>
+
+      <div class="seccion-padres">
+        <p class="leyenda-padres">Con la bendición de mis padrinos:</p>
+        <h2 class="nombres-padres">José Condori</h2>
+        <span class="ampersand">&</span>
+        <h2 class="nombres-padres">Elsa Chavez</h2>
+      </div>
+
+      <p class="leyenda-invitacion">Se complacen en invitarles a los</p>
+      
+      <div class="monograma-xv">XV</div>
+      
+      <p class="leyenda-hija">De su adorada ahijada:</p>
+      <h1 class="nombre-quinceanera-interiores">Maria Veliz</h1>
+    </section>
+
+    <!-- ===== CONTADOR ===== -->
+    <section class="contador-caja fade-in">
+      <h3>¡Te espero en:</h3>
+      <div class="contador">
+        <div><span id="dias">00</span><p>Días</p></div>
+        <div><span id="horas">00</span><p>Hrs</p></div>
+        <div><span id="min">00</span><p>Min</p></div>
+        <div><span id="seg">00</span><p>Seg</p></div>
+      </div>
+    </section>
+
+    <!-- ===== DETALLES DE EVENTO ===== -->
+    <section class="detalles">
+      <div class="tarjeta fade-in">
+        <span class="icono">📅</span>
+        <h3>Cuándo</h3>
+        <p>Sábado, 13 de Noviembre de 2026</p>
+        <p>20:00 hrs</p>
+      </div>
+
+      <div class="tarjeta fade-in">
+        <span class="icono">📍</span>
+        <h3>Dónde</h3>
+        <p>Salón de Eventos "Recepciones Mariategui"</p>
+        <a href="https://maps.app.goo.gl/3TSBd36jCsSo65no6" target="_blank" rel="noopener noreferrer" class="enlace">Ver mapa</a>
+      </div>
+    </section>
+
+    <!-- ===== CONFIRMACIÓN ===== -->
+    <section class="confirmacion fade-in">
+      <h3>¿Nos acompañas?</h3>
+      <button id="btn-whatsapp" class="btn-dorado">Confirmar Asistencia</button>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
