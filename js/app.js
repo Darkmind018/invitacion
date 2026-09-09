@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnWhatsapp = document.getElementById('btn-whatsapp');
   if (btnWhatsapp) {
     btnWhatsapp.addEventListener('click', () => {
-      const telefono = "51910803254"; 
+      const telefono = "51912205349"; 
       const texto = "Hola confirmo mi asistencia a tus 15 años.";
       window.open(`https://wa.me/${telefono}?text=${encodeURIComponent(texto)}`, '_blank');
     });
